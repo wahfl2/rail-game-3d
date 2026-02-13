@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://dmfuq0x20m0l5"]
+
+[ext_resource type="PackedScene" uid="uid://cg565eqk4vg8i" path="res://scenes/level.tscn" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://bhnrj4oi2l4pt" path="res://scripts/sub_viewport_container.gd" id="1_tbgi4"]
+[ext_resource type="Shader" uid="uid://b72hhth6ircvx" path="res://scripts/outline.gdshader" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://btfpq4etciwsh" path="res://scenes/player.tscn" id="2_jyhfs"]
+[ext_resource type="Script" uid="uid://cihum1jv7ada1" path="res://scripts/camera.gd" id="3_sugp2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sugp2"]
+render_priority = 0
+shader = ExtResource("2_0wfyh")
+shader_parameter/depth_threshold = 0.05
+shader_parameter/reverse_depth_threshold = 0.25
+shader_parameter/normal_threshold = 0.6
+shader_parameter/darken_amount = 0.3
+shader_parameter/lighten_amount = 1.5
+shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
+shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
+
+[sub_resource type="QuadMesh" id="QuadMesh_jyhfs"]
+material = SubResource("ShaderMaterial_sugp2")
+flip_faces = true
+size = Vector2(2, 2)
+
+[node name="Main" type="Node3D" unique_id=855362479]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=992642949]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 2
+script = ExtResource("1_tbgi4")
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1906105634]
+handle_input_locally = false
+size = Vector2i(640, 360)
+render_target_update_mode = 4
+
+[node name="Level" parent="SubViewportContainer/SubViewport" unique_id=1893456267 instance=ExtResource("1_o5qli")]
+
+[node name="Player" parent="SubViewportContainer/SubViewport" unique_id=1285195365 instance=ExtResource("2_jyhfs")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport/Player" unique_id=490525188]
+transform = Transform3D(0.750999, -0.011950247, 0.6601952, -0.6603032, -0.013591669, 0.75087607, 6.928196e-10, -0.9998362, -0.01809812, 0, 8.930307, 0)
+shadow_enabled = true
+
+[node name="Camera" type="Camera3D" parent="SubViewportContainer/SubViewport/Player" unique_id=2031524068]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 0, 100, 100)
+projection = 1
+size = 10.0
+far = 400.0
+script = ExtResource("3_sugp2")
+
+[node name="Post-processing" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Player/Camera" unique_id=25956009]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, 0, 0, -141.42136)
+mesh = SubResource("QuadMesh_jyhfs")
+
+[connection signal="resized" from="SubViewportContainer" to="SubViewportContainer" method="_on_resized"]

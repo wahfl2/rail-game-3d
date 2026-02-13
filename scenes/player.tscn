@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://btfpq4etciwsh"]
+
+[ext_resource type="Script" uid="uid://dp1261hgmdvl3" path="res://scripts/player.gd" id="1_3vyb7"]
+[ext_resource type="PackedScene" uid="uid://tyh2vl4mn5ny" path="res://models/playercharacter.glb" id="2_g2els"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u8vuu"]
+
+[node name="Player" type="CharacterBody3D" unique_id=1285195365]
+script = ExtResource("1_3vyb7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1732255630]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_u8vuu")
+
+[node name="Model" parent="." unique_id=1230333494 instance=ExtResource("2_g2els")]
+
+[connection signal="ready" from="." to="." method="_on_ready"]

@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cg565eqk4vg8i"]
+
+[ext_resource type="MeshLibrary" uid="uid://tgwpwr5w1dka" path="res://grid/mesh_library.tres" id="1_2q6dc"]
+[ext_resource type="Script" uid="uid://c3hjd4erwcgtx" path="res://scripts/level.gd" id="1_w7c3h"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_n6hdu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sugp2"]
+albedo_color = Color(0.74748117, 0.63302696, 0.4611876, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_km5ld"]
+material = SubResource("StandardMaterial3D_sugp2")
+size = Vector2(100, 100)
+
+[node name="Level" type="Node3D" unique_id=1893456267]
+script = ExtResource("1_w7c3h")
+
+[node name="GridMap" type="GridMap" parent="." unique_id=1786035827]
+mesh_library = ExtResource("1_2q6dc")
+cell_size = Vector3(1.414, 2, 2)
+cell_center_x = false
+cell_center_y = false
+cell_center_z = false
+data = {
+"cells": PackedInt32Array(65531, 5, 0, 65531, 8, 0, 5, 9, 0, 6, 9, 0, 7, 9, 0, 8, 9, 0, 9, 8, 0, 10, 8, 0, 11, 6, 0, 11, 5, 0, 11, 4, 0, 12, 4, 0, 12, 3, 0, 12, 2, 0, 11, 1, 0, 10, 1, 0, 10, 0, 0, 9, 0, 0, 8, 0, 0, 4, 1, 0, 2, 1, 0, 2, 2, 0, 1, 2, 0, 0, 2, 0, 65535, 3, 0, 65534, 3, 0, 65532, 4, 0, 65530, 5, 0, 65521, 3, 0, 6, 5, 0, 7, 5, 0, 6, 4, 0, 5, 1, 0, 1, 1, 0, 0, 1, 0, 65526, 9, 0, 65525, 9, 0, 65524, 9, 0, 65523, 9, 0, 65522, 9, 0, 65527, 10, 0, 65528, 10, 0, 65529, 10, 0, 65530, 10, 0, 65531, 10, 0, 65532, 10, 0, 65533, 10, 0, 65534, 10, 0, 65535, 10, 0, 0, 10, 0, 1, 10, 0, 2, 10, 0, 3, 10, 0, 4, 10, 0, 7, 8, 0, 8, 8, 0, 10, 6, 0, 10, 5, 0, 10, 3, 0, 10, 2, 0, 6, 65535, 0, 5, 65535, 0, 2, 65534, 0, 65533, 65534, 0, 65532, 65535, 0, 65531, 65535, 0, 65530, 1, 0, 65529, 2, 0, 3, 3, 0, 5, 65533, 0, 65532, 65527, 0, 65529, 65527, 0, 65528, 65527, 0, 65527, 65528, 0, 65526, 65531, 0, 65525, 65532, 0, 65525, 65533, 0, 65525, 0, 0, 65526, 1, 0, 0, 4, 0, 4, 0, 0, 2, 65527, 0, 65535, 65526, 0, 65534, 65525, 0, 65533, 65525, 0, 65532, 65524, 0, 65531, 65524, 0, 65530, 65524, 0, 65529, 65524, 0, 65525, 65524, 0, 65523, 65525, 0, 65522, 65526, 0, 65521, 65528, 0, 65521, 65529, 0, 65520, 65530, 0, 65520, 65531, 0, 65520, 65532, 0, 65521, 0, 0, 0, 0, 0, 65527, 65529, 0, 65520, 65528, 0, 65519, 65528, 0, 65518, 65528, 0, 65517, 65529, 0, 65516, 65529, 0, 65515, 65529, 0, 65514, 65529, 0, 65513, 65529, 0, 65512, 65530, 0, 65511, 65531, 0, 65511, 65532, 0, 65511, 65533, 0, 65510, 65534, 0, 65511, 65535, 0, 65511, 0, 0, 65512, 1, 0, 65513, 2, 0, 65513, 3, 0, 65514, 3, 0, 65515, 4, 0, 65516, 4, 0, 65517, 4, 0, 65517, 5, 0, 65518, 5, 0, 65519, 5, 0)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=418525599]
+
+[node name="CollisionShape" type="CollisionShape3D" parent="Floor" unique_id=677892507]
+shape = SubResource("WorldBoundaryShape3D_n6hdu")
+
+[node name="Mesh" type="MeshInstance3D" parent="Floor" unique_id=592262244]
+mesh = SubResource("PlaneMesh_km5ld")
