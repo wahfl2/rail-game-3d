@@ -1,0 +1,11 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://br8ewegn8ok7q"]
+
+[ext_resource type="Texture2D" uid="uid://cim65tisqlp7o" path="res://assets/textures/scroll-bar.png" id="1_rq4xd"]
+
+[resource]
+texture = ExtResource("1_rq4xd")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 2.0
+axis_stretch_vertical = 1

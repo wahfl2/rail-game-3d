@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemContainer" format=3 uid="uid://b5fr7n86mfefc"]
+
+[ext_resource type="Script" uid="uid://bsorkadj1cnbd" path="res://resources/inventory/item_container.gd" id="1_fvbrp"]
+[ext_resource type="Resource" uid="uid://cscwe75sdq76e" path="res://resources/inventory/container_types/wooden_chest.tres" id="1_ofvqi"]
+[ext_resource type="Script" uid="uid://b7mtd454hku6e" path="res://resources/inventory/item_stack.gd" id="2_gnusx"]
+[ext_resource type="Resource" uid="uid://daevkp7qqkh3r" path="res://resources/inventory/debug/debug_item_stack.tres" id="4_7bqnl"]
+
+[resource]
+script = ExtResource("1_fvbrp")
+container_type = ExtResource("1_ofvqi")
+slots = Array[ExtResource("2_gnusx")]([null, ExtResource("4_7bqnl"), null, ExtResource("4_7bqnl"), null, ExtResource("4_7bqnl"), null, ExtResource("4_7bqnl"), null, ExtResource("4_7bqnl")])
+metadata/_custom_type_script = "uid://bsorkadj1cnbd"

@@ -3,3 +3,6 @@ https://github.com/CBerry22/3d-Pixel-Art-In-Godot-4
 
 - Walk Cycle Animation
 https://www.youtube.com/watch?v=e_COc0ZVHr0
+
+- Inventory
+https://www.youtube.com/watch?v=X3J0fSodKgs

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemContainer" format=3 uid="uid://c82e7aldenp7b"]
+
+[ext_resource type="Resource" uid="uid://cscwe75sdq76e" path="res://resources/inventory/container_types/wooden_chest.tres" id="1_8fl1g"]
+[ext_resource type="Script" uid="uid://bsorkadj1cnbd" path="res://resources/inventory/item_container.gd" id="1_l8cpx"]
+[ext_resource type="Script" uid="uid://b7mtd454hku6e" path="res://resources/inventory/item_stack.gd" id="2_8fl1g"]
+
+[resource]
+script = ExtResource("1_l8cpx")
+container_type = ExtResource("1_8fl1g")
+metadata/_custom_type_script = "uid://bsorkadj1cnbd"

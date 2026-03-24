@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://kdtn1j4k6nx5"]
+
+[ext_resource type="ArrayMesh" uid="uid://df8c6roxxgt5w" path="res://resources/meshes/placeholder_machine.tres" id="1_krphx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4w4gy"]
+size = Vector3(1.7520142, 0.8762207, 2.3078613)
+
+[node name="Placeholder" type="MeshInstance3D" unique_id=1975556069]
+mesh = ExtResource("1_krphx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=27346812]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=667022427]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0018615723, 0.43811035, 0.0008544922)
+shape = SubResource("BoxShape3D_4w4gy")

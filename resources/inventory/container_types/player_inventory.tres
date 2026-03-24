@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ContainerType" format=3 uid="uid://bay4122v8uj7k"]
+
+[ext_resource type="Script" uid="uid://cxbxihupqoxku" path="res://resources/inventory/container_type.gd" id="1_ggpss"]
+
+[resource]
+script = ExtResource("1_ggpss")
+slots_count = 60
+metadata/_custom_type_script = "uid://cxbxihupqoxku"

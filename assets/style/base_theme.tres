@@ -1,0 +1,9 @@
+[gd_resource type="Theme" format=3 uid="uid://cfoadp0kpby6"]
+
+[ext_resource type="StyleBox" uid="uid://br8ewegn8ok7q" path="res://assets/style/scroll-bar.tres" id="1_3bi5y"]
+[ext_resource type="StyleBox" uid="uid://bed1y8u5xwkbr" path="res://assets/style/scroll-bar-pressed.tres" id="2_oiae5"]
+
+[resource]
+VScrollBar/styles/grabber = ExtResource("1_3bi5y")
+VScrollBar/styles/grabber_highlight = ExtResource("1_3bi5y")
+VScrollBar/styles/grabber_pressed = ExtResource("2_oiae5")

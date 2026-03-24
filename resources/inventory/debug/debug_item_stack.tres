@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemStack" format=3 uid="uid://daevkp7qqkh3r"]
+
+[ext_resource type="Resource" uid="uid://pj5tlkejg3u4" path="res://resources/inventory/items/placeholder.tres" id="1_7ijfr"]
+[ext_resource type="Script" uid="uid://b7mtd454hku6e" path="res://resources/inventory/item_stack.gd" id="1_sbfgp"]
+
+[resource]
+script = ExtResource("1_sbfgp")
+item_type = ExtResource("1_7ijfr")
+count = 17
+metadata/_custom_type_script = "uid://b7mtd454hku6e"

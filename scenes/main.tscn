@@ -4,7 +4,11 @@
 [ext_resource type="Script" uid="uid://bhnrj4oi2l4pt" path="res://scripts/sub_viewport_container.gd" id="1_tbgi4"]
 [ext_resource type="Shader" uid="uid://b72hhth6ircvx" path="res://scripts/outline.gdshader" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://btfpq4etciwsh" path="res://scenes/player.tscn" id="2_jyhfs"]
+[ext_resource type="Script" uid="uid://dw5wf5amr8nw" path="res://scripts/viewport.gd" id="2_tipki"]
 [ext_resource type="Script" uid="uid://cihum1jv7ada1" path="res://scripts/camera.gd" id="3_sugp2"]
+[ext_resource type="Script" uid="uid://cegjj77d3kvyd" path="res://scripts/ui/parent.gd" id="6_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://cjxs4l001cnob" path="res://scenes/ui/inventory/base.tscn" id="6_tefeu"]
+[ext_resource type="Script" uid="uid://cq2ukxjx71f2j" path="res://scripts/ui/cursor_item.gd" id="9_85g3d"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sugp2"]
 render_priority = 0
@@ -22,9 +26,13 @@ material = SubResource("ShaderMaterial_sugp2")
 flip_faces = true
 size = Vector2(2, 2)
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_85g3d"]
+size = Vector2(30, 30)
+
 [node name="Main" type="Node3D" unique_id=855362479]
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=992642949]
+unique_name_in_owner = true
 texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -39,10 +47,12 @@ script = ExtResource("1_tbgi4")
 handle_input_locally = false
 size = Vector2i(640, 360)
 render_target_update_mode = 4
+script = ExtResource("2_tipki")
 
 [node name="Level" parent="SubViewportContainer/SubViewport" unique_id=1893456267 instance=ExtResource("1_o5qli")]
 
 [node name="Player" parent="SubViewportContainer/SubViewport" unique_id=1285195365 instance=ExtResource("2_jyhfs")]
+unique_name_in_owner = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport/Player" unique_id=490525188]
 transform = Transform3D(0.750999, -0.011950247, 0.6601952, -0.6603032, -0.013591669, 0.75087607, 6.928196e-10, -0.9998362, -0.01809812, 0, 8.930307, 0)
@@ -60,4 +70,46 @@ script = ExtResource("3_sugp2")
 transform = Transform3D(1, 0, 0, 0, 0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, 0, 0, -141.42136)
 mesh = SubResource("QuadMesh_jyhfs")
 
+[node name="InteractableRayCast" type="RayCast3D" parent="SubViewportContainer/SubViewport/Player/Camera" unique_id=997500557]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+enabled = false
+target_position = Vector3(0, 0, -1000000)
+collision_mask = 2
+collide_with_areas = true
+debug_shape_thickness = 5
+
+[node name="UI" type="Node" parent="SubViewportContainer/SubViewport" unique_id=391769529]
+unique_name_in_owner = true
+script = ExtResource("6_o6xl0")
+
+[node name="Inventory" parent="SubViewportContainer/SubViewport/UI" unique_id=449304883 instance=ExtResource("6_tefeu")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -188.5
+offset_top = -84.5
+offset_right = 188.5
+offset_bottom = 84.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CursorItem" type="TextureRect" parent="SubViewportContainer/SubViewport/UI" unique_id=1678258889]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_85g3d")
+script = ExtResource("9_85g3d")
+
 [connection signal="resized" from="SubViewportContainer" to="SubViewportContainer" method="_on_resized"]
+[connection signal="visibility_changed" from="SubViewportContainer/SubViewport/UI/Inventory" to="SubViewportContainer/SubViewport/UI/Inventory" method="_on_visibility_changed"]

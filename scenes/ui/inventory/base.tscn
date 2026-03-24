@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://cjxs4l001cnob"]
+
+[ext_resource type="Texture2D" uid="uid://ckjajx5u847h7" path="res://assets/textures/basic-9patch.png" id="1_30uom"]
+[ext_resource type="Script" uid="uid://fewb4mkwj5p8" path="res://scripts/ui/inventory.gd" id="1_h746j"]
+[ext_resource type="Texture2D" uid="uid://rh74mao01b02" path="res://assets/textures/top-bar.png" id="2_h746j"]
+[ext_resource type="Script" uid="uid://ca0t6av3frwwr" path="res://scripts/ui/top_bar.gd" id="3_ei8gn"]
+[ext_resource type="Texture2D" uid="uid://deq7rcya1sjs3" path="res://assets/textures/X-button.png" id="3_yftfi"]
+[ext_resource type="Texture2D" uid="uid://cy4xdkc4huim2" path="res://assets/textures/X-button-pressed.png" id="4_lpp88"]
+[ext_resource type="PackedScene" uid="uid://c4tjcu2j8uer1" path="res://scenes/ui/inventory/container.tscn" id="7_yftfi"]
+
+[node name="InventoryUI" type="MarginContainer" unique_id=449304883]
+texture_filter = 1
+custom_minimum_size = Vector2(377, 0)
+offset_right = 377.0
+offset_bottom = 174.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 0
+script = ExtResource("1_h746j")
+
+[node name="BackgroundRect" type="NinePatchRect" parent="." unique_id=951422888]
+layout_mode = 2
+texture = ExtResource("1_30uom")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="VBox" type="VBoxContainer" parent="." unique_id=500284469]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 2
+
+[node name="TopBarContainer" type="MarginContainer" parent="VBox" unique_id=1322487080]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 2
+script = ExtResource("3_ei8gn")
+
+[node name="HBox" type="HBoxContainer" parent="VBox/TopBarContainer" unique_id=362880536]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBox/TopBarContainer/HBox" unique_id=158013227]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_h746j")
+stretch_mode = 1
+
+[node name="CloseButton" type="TextureButton" parent="VBox/TopBarContainer/HBox" unique_id=858849251]
+layout_mode = 2
+mouse_filter = 1
+texture_normal = ExtResource("3_yftfi")
+texture_pressed = ExtResource("4_lpp88")
+texture_hover = ExtResource("3_yftfi")
+texture_focused = ExtResource("3_yftfi")
+
+[node name="HBox" type="HBoxContainer" parent="VBox" unique_id=1281537379]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+
+[node name="Container" parent="VBox/HBox" unique_id=370316684 instance=ExtResource("7_yftfi")]
+layout_mode = 2
+
+[connection signal="pressed" from="VBox/TopBarContainer/HBox/CloseButton" to="." method="_on_close_button_pressed"]

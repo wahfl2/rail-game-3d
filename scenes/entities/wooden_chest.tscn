@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://mjsjy1xbyjev"]
+
+[ext_resource type="ArrayMesh" uid="uid://boxwpv8nychou" path="res://resources/meshes/wooden_chest.tres" id="1_oe11d"]
+[ext_resource type="PackedScene" uid="uid://x502dsv5vxcv" path="res://scenes/components/interactable.tscn" id="2_oyvg1"]
+[ext_resource type="PackedScene" uid="uid://dkmdylrmm05vp" path="res://scenes/components/container.tscn" id="3_0u0j6"]
+[ext_resource type="Resource" uid="uid://c82e7aldenp7b" path="res://resources/inventory/default/default_wooden_chest.tres" id="4_0u0j6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_27w6l"]
+
+[node name="WoodenChest" type="MeshInstance3D" unique_id=658001144]
+mesh = ExtResource("1_oe11d")
+
+[node name="InteractableComponent" parent="." unique_id=1072682533 instance=ExtResource("2_oyvg1")]
+
+[node name="Area3D" type="Area3D" parent="InteractableComponent" unique_id=750535582]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractableComponent/Area3D" unique_id=619907293]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_27w6l")
+
+[node name="ContainerComponent" parent="InteractableComponent" unique_id=358740008 instance=ExtResource("3_0u0j6")]
+container = ExtResource("4_0u0j6")

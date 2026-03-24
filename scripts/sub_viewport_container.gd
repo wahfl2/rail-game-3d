@@ -1,15 +1,4 @@
 extends SubViewportContainer
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
 func _on_resized() -> void:
-	stretch_shrink = max(1, round(size.y / 360))
+	stretch_shrink = max(1, round(size.y / 720))

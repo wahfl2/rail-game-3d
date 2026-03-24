@@ -1,3 +1,6 @@
+// Shader
+// https://github.com/CBerry22/3d-Pixel-Art-In-Godot-4
+
 shader_type spatial;
 render_mode unshaded;
 
@@ -13,7 +16,7 @@ uniform float darken_amount : hint_range(0, 1, 0.01) = 0.3;
 uniform float lighten_amount : hint_range(0, 10, 0.01) = 1.5;
 
 uniform vec3 normal_edge_bias = vec3(1, 1, 1);
-uniform vec3 light_direction = vec3(-0.96, -0.18, 0.2);
+uniform vec3 light_direction = vec3(1, 1, 0);
 
 float get_depth(vec2 screen_uv, mat4 inv_projection_matrix) {
 	float depth = texture(depth_texture, screen_uv).r;

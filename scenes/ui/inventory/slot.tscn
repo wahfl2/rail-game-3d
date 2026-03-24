@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://6xpwuimrva5l"]
+
+[ext_resource type="Script" uid="uid://c27ujy0egg7e3" path="res://scripts/ui/slot.gd" id="1_mvsae"]
+[ext_resource type="Texture2D" uid="uid://ckeialtk6n67k" path="res://assets/textures/inventory-slot.png" id="2_rvwbt"]
+[ext_resource type="FontFile" uid="uid://dj2x07fpu6gab" path="res://assets/fonts/rainyhearts.ttf" id="3_jxoqv"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_jxoqv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rvwbt"]
+line_spacing = 0.0
+font = ExtResource("3_jxoqv")
+
+[node name="Slot" type="TextureRect" unique_id=56999742]
+texture_filter = 1
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_rvwbt")
+script = ExtResource("1_mvsae")
+
+[node name="Margin" type="MarginContainer" parent="." unique_id=1796632408]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="ItemIcon" type="TextureRect" parent="Margin" unique_id=855113778]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_jxoqv")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Count" type="Label" parent="Margin" unique_id=442719351]
+layout_mode = 2
+size_flags_vertical = 1
+text = "10"
+label_settings = SubResource("LabelSettings_rvwbt")
+horizontal_alignment = 2
+vertical_alignment = 2

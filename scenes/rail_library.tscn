@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bjilaj051svma"]
+
+[ext_resource type="ArrayMesh" uid="uid://ba3tkwtbhvbqd" path="res://resources/meshes/rails/curve_inner.tres" id="1_ledw3"]
+[ext_resource type="ArrayMesh" uid="uid://bsgyyyyywdpnf" path="res://resources/meshes/rails/curve_outer.tres" id="2_bhlr0"]
+[ext_resource type="ArrayMesh" uid="uid://djeqnxdtf3l0p" path="res://resources/meshes/rails/straight.tres" id="3_w76gh"]
+[ext_resource type="ArrayMesh" uid="uid://dubrp6ceegnb7" path="res://resources/meshes/rails/straight_45.tres" id="4_w28nj"]
+[ext_resource type="ArrayMesh" uid="uid://dh15m7a47pgsg" path="res://resources/meshes/rails/straight_225.tres" id="5_rvexi"]
+
+[node name="RailLibrary" type="Node3D" unique_id=256793964]
+
+[node name="CurveInner" type="MeshInstance3D" parent="." unique_id=1758674200]
+mesh = ExtResource("1_ledw3")
+
+[node name="CurveOuter" type="MeshInstance3D" parent="." unique_id=934092871]
+mesh = ExtResource("2_bhlr0")
+
+[node name="Straight" type="MeshInstance3D" parent="." unique_id=406796684]
+mesh = ExtResource("3_w76gh")
+
+[node name="Straight45" type="MeshInstance3D" parent="." unique_id=1121688903]
+mesh = ExtResource("4_w28nj")
+
+[node name="Straight225" type="MeshInstance3D" parent="." unique_id=560216523]
+mesh = ExtResource("5_rvexi")

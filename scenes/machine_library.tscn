@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://d3dvoqyffxgxa"]
+
+[ext_resource type="PackedScene" uid="uid://kdtn1j4k6nx5" path="res://scenes/entities/placeholder.tscn" id="1_bvl6a"]
+
+[node name="MachineLibrary" type="Node3D" unique_id=2137966936]
+
+[node name="Placeholder" parent="." unique_id=1975556069 instance=ExtResource("1_bvl6a")]

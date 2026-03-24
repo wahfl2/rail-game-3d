@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ItemContainer" format=3 uid="uid://cbmfvjw86vr36"]
+
+[ext_resource type="Resource" uid="uid://bay4122v8uj7k" path="res://resources/inventory/container_types/player_inventory.tres" id="1_pj3cs"]
+[ext_resource type="Script" uid="uid://bsorkadj1cnbd" path="res://resources/inventory/item_container.gd" id="2_3cpk8"]
+[ext_resource type="Script" uid="uid://b7mtd454hku6e" path="res://resources/inventory/item_stack.gd" id="3_iakq6"]
+[ext_resource type="Resource" uid="uid://daevkp7qqkh3r" path="res://resources/inventory/debug/debug_item_stack.tres" id="4_pj3cs"]
+[ext_resource type="Resource" uid="uid://chk46lnn3jmpi" path="res://resources/inventory/items/wooden_chest.tres" id="5_3cpk8"]
+
+[sub_resource type="Resource" id="Resource_iakq6"]
+script = ExtResource("3_iakq6")
+item_type = ExtResource("5_3cpk8")
+count = 100
+metadata/_custom_type_script = "uid://b7mtd454hku6e"
+
+[resource]
+script = ExtResource("2_3cpk8")
+container_type = ExtResource("1_pj3cs")
+owner = 1
+slots = Array[ExtResource("3_iakq6")]([ExtResource("4_pj3cs"), SubResource("Resource_iakq6"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
+metadata/_custom_type_script = "uid://bsorkadj1cnbd"

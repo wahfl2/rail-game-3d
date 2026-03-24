@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ContainerType" format=3 uid="uid://cscwe75sdq76e"]
+
+[ext_resource type="Script" uid="uid://cxbxihupqoxku" path="res://resources/inventory/container_type.gd" id="1_dutk8"]
+
+[resource]
+script = ExtResource("1_dutk8")
+slots_count = 20
+metadata/_custom_type_script = "uid://cxbxihupqoxku"

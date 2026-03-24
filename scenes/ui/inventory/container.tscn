@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://c4tjcu2j8uer1"]
+
+[ext_resource type="Script" uid="uid://crx4tn3thca6f" path="res://scripts/ui/screens/container.gd" id="1_ddfm3"]
+[ext_resource type="Theme" uid="uid://cfoadp0kpby6" path="res://assets/style/base_theme.tres" id="1_hw13b"]
+[ext_resource type="Script" uid="uid://608fahr6akmw" path="res://scripts/ui/scroll_container.gd" id="2_ddfm3"]
+[ext_resource type="Script" uid="uid://bi1kc0wh413df" path="res://scripts/tools/slots_tool.gd" id="3_66k22"]
+[ext_resource type="PackedScene" uid="uid://6xpwuimrva5l" path="res://scenes/ui/inventory/slot.tscn" id="4_ylxmv"]
+
+[node name="Container" type="MarginContainer" unique_id=370316684]
+offset_right = 375.0
+offset_bottom = 201.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+script = ExtResource("1_ddfm3")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=34631301]
+custom_minimum_size = Vector2(365, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_hw13b")
+horizontal_scroll_mode = 0
+script = ExtResource("2_ddfm3")
+
+[node name="Slots" type="HFlowContainer" parent="ScrollContainer" unique_id=1982347278]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_66k22")
+
+[node name="Background" parent="ScrollContainer/Slots" unique_id=56999742 instance=ExtResource("4_ylxmv")]
+layout_mode = 2
+
+[node name="_TextureRect_19422" parent="ScrollContainer/Slots" unique_id=1492679010 instance=ExtResource("4_ylxmv")]
+layout_mode = 2
+
+[node name="_TextureRect_19423" parent="ScrollContainer/Slots" unique_id=1780656514 instance=ExtResource("4_ylxmv")]
+layout_mode = 2
+
+[node name="_TextureRect_19424" parent="ScrollContainer/Slots" unique_id=1869308183 instance=ExtResource("4_ylxmv")]
+layout_mode = 2
+
+[node name="_TextureRect_19425" parent="ScrollContainer/Slots" unique_id=153530354 instance=ExtResource("4_ylxmv")]
+layout_mode = 2
+
+[node name="_TextureRect_46689" parent="ScrollContainer/Slots" unique_id=2003887897 instance=ExtResource("4_ylxmv")]
+layout_mode = 2
+
+[node name="_TextureRect_46690" parent="ScrollContainer/Slots" unique_id=284364475 instance=ExtResource("4_ylxmv")]
+layout_mode = 2
+
+[node name="_TextureRect_46691" parent="ScrollContainer/Slots" unique_id=1958758280 instance=ExtResource("4_ylxmv")]
+layout_mode = 2
+
+[node name="_TextureRect_46692" parent="ScrollContainer/Slots" unique_id=1968126308 instance=ExtResource("4_ylxmv")]
+layout_mode = 2
+
+[node name="_TextureRect_46693" parent="ScrollContainer/Slots" unique_id=1522522908 instance=ExtResource("4_ylxmv")]
+layout_mode = 2
+
+[node name="_TextureRect_46694" parent="ScrollContainer/Slots" unique_id=1233409441 instance=ExtResource("4_ylxmv")]
+layout_mode = 2
+
+[node name="_TextureRect_46695" parent="ScrollContainer/Slots" unique_id=1188951603 instance=ExtResource("4_ylxmv")]
+layout_mode = 2
+
+[node name="_TextureRect_46696" parent="ScrollContainer/Slots" unique_id=377517968 instance=ExtResource("4_ylxmv")]
+layout_mode = 2
+
+[node name="_TextureRect_46697" parent="ScrollContainer/Slots" unique_id=1059247065 instance=ExtResource("4_ylxmv")]
+layout_mode = 2
+
+[node name="_TextureRect_46698" parent="ScrollContainer/Slots" unique_id=2009349033 instance=ExtResource("4_ylxmv")]
+layout_mode = 2
+
+[node name="_TextureRect_46699" parent="ScrollContainer/Slots" unique_id=1108992268 instance=ExtResource("4_ylxmv")]
+layout_mode = 2
+
+[node name="_TextureRect_46700" parent="ScrollContainer/Slots" unique_id=1812766472 instance=ExtResource("4_ylxmv")]
+layout_mode = 2
+
+[node name="_TextureRect_46701" parent="ScrollContainer/Slots" unique_id=1787351450 instance=ExtResource("4_ylxmv")]
+layout_mode = 2
+
+[node name="_TextureRect_46702" parent="ScrollContainer/Slots" unique_id=877204506 instance=ExtResource("4_ylxmv")]
+layout_mode = 2
+
+[node name="_TextureRect_46703" parent="ScrollContainer/Slots" unique_id=100204110 instance=ExtResource("4_ylxmv")]
+layout_mode = 2
+
+[connection signal="resized" from="ScrollContainer/Slots" to="ScrollContainer" method="_on_slots_resized"]
